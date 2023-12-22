@@ -11,6 +11,9 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            color: Black;
+            font-family: system-ui;
+            background-color: darkred;
         }
 
         #game-container {
@@ -18,14 +21,14 @@
         }
 
         #game-icon {
-            width: 100px;
-            height: 100px;
+            width: 220px;
+            height: 300px;
             cursor: pointer;
         }
 
         #result {
             margin-top: 20px;
-            font-size: 1.2em;
+            font-size: 3em;
         }
     </style>
 </head>
@@ -37,7 +40,7 @@
 </div>
 
 <script>
-    // Function to get a random outcome based on the specified chances
+    // Function to get a random outcome based on the specified chances //
     function getRandomOutcome() {
         const randomValue = Math.random() * 100;
 
@@ -75,9 +78,11 @@
         }
     }
 
-    // Add click event listener to the game icon
+    // click event listener to the game icon //
     document.getElementById("game-icon").addEventListener("click", handleGameClick);
 </script>
 
 </body>
 </html>
+
+
