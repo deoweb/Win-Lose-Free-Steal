@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Outcome Game</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: Black;
+            font-family: system-ui;
+            background-color: darkred;
+        }
+
+        #game-container {
+            text-align: center;
+        }
+
+        #game-icon {
+            width: 220px;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <img src="your-icon.png" id="game-icon" alt="Game Icon">
+    <div id="result"></div>
+</div>
+
+<script>
+    // Function to get a random outcome based on the specified chances //
+    function getRandomOutcome() {
+        const randomValue = Math.random() * 100;
+
+        if (randomValue < 40) {
+            return "Lose";
+        } else if (randomValue < 70) {
+            return "Win";
+        } else if (randomValue < 90) {
+            return "Play Again";
+        } else {
+            return "Steal";
+        }
+    }
+
+    // Function to handle the game click event
+    function handleGameClick() {
+        const resultElement = document.getElementById("result");
+        const outcome = getRandomOutcome();
+
+        switch (outcome) {
+            case "Lose":
+                resultElement.textContent = "You Lose!";
+                break;
+            case "Win":
+                resultElement.textContent = "You Win!";
+                break;
+            case "Play Again":
+                resultElement.textContent = "Play again...";
+                break;
+            case "Steal":
+                resultElement.textContent = "Steal...";
+                break;
+            default:
+                break;
+        }
+    }
+
+    // click event listener to the game icon //
+    document.getElementById("game-icon").addEventListener("click", handleGameClick);
+</script>
+
+</body>
+</html>
